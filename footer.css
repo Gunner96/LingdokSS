@@ -1,0 +1,24 @@
+.footer-main-end{
+    display: flex;
+    justify-content: center;
+}
+
+.footer-main-end p{
+    padding:auto;
+}
+
+.footer-main > *{
+    background-color: red;
+    background-image: url("images/school_background.jpg");
+    background-repeat: repeat;
+    background-size:cover;
+}
+
+.footer-main-content{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-image: url("images/school_background.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+}
