@@ -7,18 +7,12 @@
     padding:auto;
 }
 
-.footer-main > *{
-    background-color: red;
-    background-image: url("images/school_background.jpg");
-    background-repeat: repeat;
-    background-size:cover;
-}
 
 .footer-main-content{
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    background-image: url("images/school_background.jpg");
+    background-image:linear-gradient(0deg, rgba(78, 77, 78, 0.494), rgba(93, 90, 92, 0.3)), url("images/school_background.jpg");
     background-repeat: repeat;
     background-size: cover;
 }
