@@ -46,9 +46,9 @@
     </header>
     <main>
         
-    <div class="teachers-corner">
+    <div class="teachers-corner" id="teachers-container">
         <!-- <h2>Teachers Corner</h2> -->
-        <section class="teacher-card">
+        <!-- <section class="teacher-card">
             <div class="teacher-card-image">
                 <img src="images/prinicinple-mam.jpg" alt="teacher">
             </div>
@@ -95,7 +95,43 @@
                 <p>English</p>
             </div>
             
-        </section>
+        </section> -->
+
+        <script>
+            // Fetch the JSON data and populate the HTML
+            fetch('./Data/teachers.json')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('teachers-container');
+                    data.forEach(teacher => {
+                        const card = document.createElement('div');
+                        card.className = 'teacher-card';
+    
+                        const imageDiv = document.createElement('div');
+                        imageDiv.className = 'teacher-card-image';
+                        const img = document.createElement('img');
+                        img.src = teacher.image;
+                        img.alt = teacher.name;
+                        imageDiv.appendChild(img);
+    
+                        const textDiv = document.createElement('div');
+                        textDiv.className = 'teacher-card-text';
+                        const name = document.createElement('h3');
+                        name.textContent = teacher.name;
+                        const designation = document.createElement('p');
+                        designation.textContent = teacher.designation || teacher.designation;
+    
+                        textDiv.appendChild(name);
+                        textDiv.appendChild(designation);
+    
+                        card.appendChild(imageDiv);
+                        card.appendChild(textDiv);
+    
+                        container.appendChild(card);
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        </script>
 
     </div>
 </main>
